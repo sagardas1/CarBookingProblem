@@ -12,14 +12,12 @@ import com.carBookingProblem.models.Registration;
 
 @Repository
 @Transactional
-public interface CarRepository extends   CrudRepository<Registration, Long>{
+public interface CarRepository extends CrudRepository<Registration, Long> {
 
-	
 	@Transactional
 	@Query(value = "select * from Registration where emailId = :emailId AND contactNum = :contactNum", nativeQuery = true)
 	Registration getRegistration(String emailId, String contactNum);
 
-	
 	@Transactional
 	@Query(value = "UPDATE Registration set isAvailable=:isAvailable where email = :email AND userType=2", nativeQuery = true)
 	int updateAvailablity(String email, boolean isAvailable);
@@ -32,6 +30,4 @@ public interface CarRepository extends   CrudRepository<Registration, Long>{
 	@Query(value = "select * from Registration where emailId = :emailId", nativeQuery = true)
 	Registration getRegistration(String emailId);
 
-
-	
 }
