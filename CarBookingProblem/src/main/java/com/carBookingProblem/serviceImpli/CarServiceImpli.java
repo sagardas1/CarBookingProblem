@@ -2,6 +2,7 @@ package com.carBookingProblem.serviceImpli;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -109,16 +110,16 @@ public class CarServiceImpli implements CarServiceDao {
 		List<ResistrationDto> finalList = null;
 		ResistrationDto obj = null;
 		try {
-//List<LocationDetails> detailsList=new ArrayList<LocationDetails>();
-
+List<LocationDetails> detailsList=new ArrayList<LocationDetails>();
+//int size=5;
 			resistrationDtos = carRepository.getAllAvailableDrivers();
-//			for(Registration r : resistrationDtos) {
-//			LocationDetails detail=locationRepository.getDirverLocation(r.getEmailId());
-//			detailsList.add(detail);
-//			}
-//			
+			for(Registration r : resistrationDtos) {
+			LocationDetails detail=locationRepository.getDirverLocation(r.getEmailId());
+			detailsList.add(detail);
+			}
+			
 //	List<String> emails= detailsList.stream()
-//			.filter(p -> Utills.getDistanceInkm(p.getLat(),p.getLon(),lat,lon)<5)
+//			.filter(p -> Utills.getDistanceInkm(p.getLat(),p.getLon(),lat,lon)<size)
 //			.map(str -> str.getEmail())
 //			.collect(Collectors.toList());
 //			
