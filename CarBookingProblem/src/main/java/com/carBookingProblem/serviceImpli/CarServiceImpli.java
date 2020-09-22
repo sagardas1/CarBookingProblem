@@ -63,18 +63,18 @@ public class CarServiceImpli implements CarServiceDao {
 	public BaseResponce updateLocation(LocationDTO locationDTO) {
 		BaseResponce baseResponce = null;
 		try {
-
-			int i = locationRepository.updateLocation(locationDTO.getX(), locationDTO.getEmail(), locationDTO.getY());
-			if (i > 0) {
+LocationDetails entity=new LocationDetails();
+entity.setEmail(locationDTO.getEmail());
+entity.setLat(locationDTO.getX());
+entity.setLon(locationDTO.getY());
+			 locationRepository.save(entity);
+					//locationRepository.updateLocation(locationDTO.getX(), locationDTO.getEmail(), locationDTO.getY());
+		//	if (i > 0) {
 
 				baseResponce = new BaseResponce();
 				baseResponce.setStatusCode(ResponceConstant.SUCCESS_CREATED);
 				baseResponce.setStatusMessage(ResponceConstant.SUCESS_MESSAGE);
-			} else {
-				baseResponce = new BaseResponce();
-				baseResponce.setStatusCode(ResponceConstant.STATUS404);
-				baseResponce.setStatusMessage(ResponceConstant.FAIL_MESSAGE);
-			}
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

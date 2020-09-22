@@ -7,6 +7,8 @@ public class ResistrationDto {
 	private String contactNum;
 	private String emailId;
 	private int userType;
+	int seatfillUp=0; //4
+	
 	private boolean isAvailable;
 	
 	public String getfName() {
