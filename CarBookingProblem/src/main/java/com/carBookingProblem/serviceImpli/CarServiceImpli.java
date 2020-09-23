@@ -124,11 +124,11 @@ public class CarServiceImpli implements CarServiceDao {
 				detailsList.add(detail);
 			}
 
-//	List<String> emails= detailsList.stream()
-//			.filter(p -> Utills.getDistanceInkm(p.getLat(),p.getLon(),lat,lon)<size)
-//			.map(str -> str.getEmail())
-//			.collect(Collectors.toList());
-//			
+     //	List<String> emails= detailsList.stream()
+     //			.filter(p -> Utills.getDistanceInkm(p.getLat(),p.getLon(),lat,lon)<size)
+    //			.map(str -> str.getEmail())
+    //			.collect(Collectors.toList());
+   //			
 
 			if (resistrationDtos != null && !resistrationDtos.isEmpty()) {
 				finalList = new ArrayList<ResistrationDto>();
