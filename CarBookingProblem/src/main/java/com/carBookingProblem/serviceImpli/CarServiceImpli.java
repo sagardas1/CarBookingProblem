@@ -63,18 +63,19 @@ public class CarServiceImpli implements CarServiceDao {
 	public BaseResponce updateLocation(LocationDTO locationDTO) {
 		BaseResponce baseResponce = null;
 		try {
-LocationDetails entity=new LocationDetails();
-entity.setEmail(locationDTO.getEmail());
-entity.setLat(locationDTO.getX());
-entity.setLon(locationDTO.getY());
-			 locationRepository.save(entity);
-					//locationRepository.updateLocation(locationDTO.getX(), locationDTO.getEmail(), locationDTO.getY());
-		//	if (i > 0) {
+			LocationDetails entity = new LocationDetails();
+			entity.setEmail(locationDTO.getEmail());
+			entity.setLat(locationDTO.getX());
+			entity.setLon(locationDTO.getY());
+			locationRepository.save(entity);
+			// locationRepository.updateLocation(locationDTO.getX(), locationDTO.getEmail(),
+			// locationDTO.getY());
+			// if (i > 0) {
 
-				baseResponce = new BaseResponce();
-				baseResponce.setStatusCode(ResponceConstant.SUCCESS_CREATED);
-				baseResponce.setStatusMessage(ResponceConstant.SUCESS_MESSAGE);
-		
+			baseResponce = new BaseResponce();
+			baseResponce.setStatusCode(ResponceConstant.SUCCESS_CREATED);
+			baseResponce.setStatusMessage(ResponceConstant.SUCESS_MESSAGE);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -110,14 +111,14 @@ entity.setLon(locationDTO.getY());
 		List<ResistrationDto> finalList = null;
 		ResistrationDto obj = null;
 		try {
-List<LocationDetails> detailsList=new ArrayList<LocationDetails>();
+			List<LocationDetails> detailsList = new ArrayList<LocationDetails>();
 //int size=5;
 			resistrationDtos = carRepository.getAllAvailableDrivers();
-			for(Registration r : resistrationDtos) {
-			LocationDetails detail=locationRepository.getDirverLocation(r.getEmailId());
-			detailsList.add(detail);
+			for (Registration r : resistrationDtos) {
+				LocationDetails detail = locationRepository.getDirverLocation(r.getEmailId());
+				detailsList.add(detail);
 			}
-			
+
 //	List<String> emails= detailsList.stream()
 //			.filter(p -> Utills.getDistanceInkm(p.getLat(),p.getLon(),lat,lon)<size)
 //			.map(str -> str.getEmail())
