@@ -117,7 +117,7 @@ public class CarServiceImpli implements CarServiceDao {
 		ResistrationDto obj = null;
 		try {
 			List<LocationDetails> detailsList = new ArrayList<LocationDetails>();
-//int size=5;
+ //int size=5;
 			resistrationDtos = carRepository.getAllAvailableDrivers();
 			for (Registration r : resistrationDtos) {
 				LocationDetails detail = locationRepository.getDirverLocation(r.getEmailId());
