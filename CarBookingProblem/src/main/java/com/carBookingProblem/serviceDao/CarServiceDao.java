@@ -19,6 +19,7 @@ public interface CarServiceDao {
 
 	BaseResponce bookCab(String emailId, ResistrationDto resistrationDto);
 
+	
 	List<Rides> getAllRides(String emailId);
 
 	BaseResponce endRide(String emailId);
