@@ -16,6 +16,13 @@ public class Registration {
 	private String emailId;
 	private int userType;
 	private boolean isAvailable;
+	private int seatfillUp;
+	public int getSeatfillUp() {
+		return seatfillUp;
+	}
+	public void setSeatfillUp(int seatfillUp) {
+		this.seatfillUp = seatfillUp;
+	}
 	public Long getRedgId() {
 		return redgId;
 	}

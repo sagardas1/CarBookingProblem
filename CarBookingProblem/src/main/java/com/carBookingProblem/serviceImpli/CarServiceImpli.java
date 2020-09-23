@@ -13,6 +13,7 @@ import com.carBookingProblem.baseResponce.BaseResponce;
 import com.carBookingProblem.carRepo.CarRepository;
 import com.carBookingProblem.carRepo.LocationRepository;
 import com.carBookingProblem.carRepo.RidesRepos;
+import com.carBookingProblem.constants.Constants;
 import com.carBookingProblem.models.LocationDetails;
 import com.carBookingProblem.models.Registration;
 import com.carBookingProblem.models.Rides;
@@ -38,12 +39,16 @@ public class CarServiceImpli implements CarServiceDao {
 			Registration registration = carRepository.getRegistration(resistrationDto.getEmailId(),
 					resistrationDto.getContactNum());
 			if (registration == null) {
+if(resistrationDto.getUserType()==Constants.USERTYPE_DRIVERS) {
+	resistrationDto.setSeatfillUp(0);
+}
 				entity = new Registration();
 				entity.setContactNum(resistrationDto.getContactNum());
 				entity.setEmailId(resistrationDto.getEmailId());
 				entity.setfName(resistrationDto.getfName());
 				entity.setlName(resistrationDto.getlName());
 				entity.setUserType(resistrationDto.getUserType());
+				entity.setSeatfillUp(0);
 				carRepository.save(entity);
 				baseResponce = new BaseResponce();
 				baseResponce.setStatusCode(ResponceConstant.SUCCESS_CREATED);
