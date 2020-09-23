@@ -7,7 +7,7 @@ public class ResistrationDto {
 	private String contactNum;
 	private String emailId;
 	private int userType;
-	int seatfillUp=0; //4
+	private int seatfillUp;
 	
 	private boolean isAvailable;
 	
@@ -46,6 +46,12 @@ public class ResistrationDto {
 	}
 	public void setAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
+	}
+	public int getSeatfillUp() {
+		return seatfillUp;
+	}
+	public void setSeatfillUp(int seatfillUp) {
+		this.seatfillUp = seatfillUp;
 	}
 	
 
