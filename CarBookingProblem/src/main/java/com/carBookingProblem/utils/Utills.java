@@ -12,6 +12,7 @@ public class Utills {
 		double d = R * c; // Distance in km
 		return d;
 	}
+	
 
 	private static double deg2rad(double deg) {
 		return deg * (Math.PI / 180);
