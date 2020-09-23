@@ -41,6 +41,7 @@ public class CarServiceImpli implements CarServiceDao {
 				if (resistrationDto.getUserType() == Constants.USERTYPE_DRIVERS) {
 					resistrationDto.setSeatfillUp(0);
 				}
+				
 				entity = new Registration();
 				entity.setContactNum(resistrationDto.getContactNum());
 				entity.setEmailId(resistrationDto.getEmailId());
