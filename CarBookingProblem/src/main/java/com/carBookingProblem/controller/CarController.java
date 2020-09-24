@@ -103,6 +103,7 @@ public class CarController {
 	}
 	
 	
+	
 	@GetMapping(value="/endRide/{emailId}",headers = "Accept=application/json")
 	public BaseResponce endRide(@PathVariable ("emailId") String emailId) {
 		BaseResponce baseResponce=null;
