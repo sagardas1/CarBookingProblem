@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class LocationDetails {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long locationId;
