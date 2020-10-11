@@ -14,6 +14,7 @@ import com.carBookingProblem.models.Rides;
 @Transactional
 public interface RidesRepos extends CrudRepository<Rides, Long> {
 
+	
 	@Transactional
 	@Query(value = "select * from Rides where userEmail = :userEmail", nativeQuery = true)
 	List<Rides> getAllRides(String userEmail);
