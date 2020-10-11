@@ -10,6 +10,7 @@ public class Registration {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long redgId;
+	
 	private String fName;
 	private String lName;
 	private String contactNum;
