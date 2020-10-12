@@ -16,4 +16,5 @@ public class ResponceConstant {
 	public static final String SUCESS_MESSAGE_LOGIN = "Success login";
 	public static final String FAILED_MESSAGE_LOGIN = "Incorrect email or password";
 	public static final String UPDATE = "Updated";
+	public static final String FAILED_TEXT = "Fail text";
 }
