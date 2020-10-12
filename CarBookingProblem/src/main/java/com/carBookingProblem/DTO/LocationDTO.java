@@ -2,6 +2,7 @@ package com.carBookingProblem.DTO;
 
 public class LocationDTO {
 
+	
 	private double x;
 	private double y;
 	private String email;
