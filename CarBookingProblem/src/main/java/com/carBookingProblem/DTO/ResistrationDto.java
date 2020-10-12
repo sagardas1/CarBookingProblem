@@ -19,7 +19,6 @@ public class ResistrationDto {
 		this.fName = fName;
 	}
 
-	
 	public String getlName() {
 		return lName;
 	}
