@@ -13,8 +13,6 @@ import com.carBookingProblem.models.Registration;
 @Repository
 @Transactional
 public interface CarRepository extends CrudRepository<Registration, Long> {
-	
-	
 
 	@Transactional
 	@Query(value = "select * from Registration where emailId = :emailId AND contactNum = :contactNum", nativeQuery = true)
